@@ -44,7 +44,7 @@ class RandomWordsState extends State<RandomWords> {
     return ListTile(
       title: Text(
         pair.asPascalCase,
-        style: Style.biggerFont,
+        style: Style.biggerFont(),
       ),
       trailing: Icon(
         alreadySaved ? Icons.favorite : Icons.favorite_border,

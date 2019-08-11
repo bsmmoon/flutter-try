@@ -9,7 +9,7 @@ class Saved {
         return ListTile(
           title: Text(
             pair.asPascalCase,
-            style: Style.biggerFont,
+            style: Style.biggerFont(),
           )
         );
       },
