@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'styles.dart';
-import 'saved.dart';
+import 'package:app/styles.dart';
+import 'package:app/saved.dart';
+import 'package:app/chat_screen.dart';
 
 class RandomWords extends StatefulWidget {
   @override
@@ -18,6 +19,7 @@ class RandomWordsState extends State<RandomWords> {
       appBar: AppBar(
         title: Text('Startup Name Generator'),
         actions: <Widget> [
+          IconButton(icon: Icon(Icons.message), onPressed: _pushMessage),
           IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
         ],
       ),
@@ -69,6 +71,16 @@ class RandomWordsState extends State<RandomWords> {
           return Saved.make(context, _saved);
         },
       )
+    );
+  }
+
+  void _pushMessage() {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+          return ChatScreen();
+        },
+      ),
     );
   }
 }
